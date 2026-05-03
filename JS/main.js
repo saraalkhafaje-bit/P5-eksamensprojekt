@@ -4,7 +4,7 @@
  */
 
 /* TODO: Replace YOUTUBE_VIDEO_ID with the real YouTube video ID for the clinic introduction video */
-var YOUTUBE_VIDEO_ID = 'dQw4w9WgXcQ';
+var YOUTUBE_VIDEO_ID = 'INDSÆT_VIDEO_ID_HER';
 
 (function () {
   'use strict';
