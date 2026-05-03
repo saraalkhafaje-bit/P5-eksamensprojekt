@@ -2,6 +2,10 @@
  * main.js – Grocott Fysioterapi
  * Handles: mobile nav, video embed, booking calendar, modal flow, smooth scroll, fade-in
  */
+
+/* TODO: Replace YOUTUBE_VIDEO_ID with the real YouTube video ID for the clinic introduction video */
+var YOUTUBE_VIDEO_ID = 'dQw4w9WgXcQ';
+
 (function () {
   'use strict';
 
@@ -37,7 +41,7 @@
       var container = videoPlaceholder.closest('.video-container');
       var iframe    = document.createElement('iframe');
       /* Replace VIDEO_ID with the real YouTube ID when available */
-      iframe.src             = 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&modestbranding=1';
+      iframe.src             = 'https://www.youtube-nocookie.com/embed/' + YOUTUBE_VIDEO_ID + '?autoplay=1&rel=0&modestbranding=1';
       iframe.title           = 'Introduktionsvideo – Grocott Fysioterapi';
       iframe.allow           = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
       iframe.allowFullscreen = true;
