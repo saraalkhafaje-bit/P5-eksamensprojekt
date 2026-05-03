@@ -3,10 +3,579 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grocott Fysioterapi</title>
+    <title>Grocott Fysioterapi – Professionel fysioterapi i dit nærområde</title>
+    <meta name="description" content="Grocott Fysioterapi tilbyder professionel behandling af rygsmerter, nakkesmerter, skulder, knæ og meget mere. Book din tid online – ingen login krævet." />
     <link rel="stylesheet" href="Main.css" />
   </head>
   <body>
 
+    <!-- ===================== HEADER ===================== -->
+    <header class="site-header" id="top">
+      <div class="container">
+        <a href="#top" class="logo" aria-label="Grocott Fysioterapi forside">
+          <svg class="logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32" height="32">
+            <circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/>
+            <line x1="16" y1="8" x2="16" y2="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="8" y1="16" x2="24" y2="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <span class="logo-text">Grocott <strong>Fysioterapi</strong></span>
+        </a>
+        <nav class="main-nav" id="mainNav" aria-label="Hovednavigation">
+          <ul>
+            <li><a href="#symptomer">Symptomer</a></li>
+            <li><a href="#booking">Book tid</a></li>
+            <li><a href="#anmeldelser">Anmeldelser</a></li>
+            <li><a href="#om-nicolai">Om Nicolai</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <a href="#booking" class="btn btn-primary">Book tid</a>
+          <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Åbn menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-content">
+          <p class="hero-eyebrow">Professionel fysioterapi</p>
+          <h1>Kom tilbage til det liv, du savner</h1>
+          <p class="hero-lead">Effektiv behandling af smerter og bevægelsesproblemer. Personlig tilgang – ingen venteliste.</p>
+          <div class="hero-cta">
+            <a href="#booking" class="btn btn-accent btn-large">Se ledige tider</a>
+            <a href="#om-nicolai" class="btn btn-ghost btn-large">Mød Nicolai</a>
+          </div>
+          <div class="hero-trust">
+            <div class="trust-item">
+              <span class="trust-stars" aria-label="4,8 ud af 5 stjerner">★★★★★</span>
+              <span class="trust-label">4.8 på Trustpilot</span>
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-item">
+              <span class="trust-number">500+</span>
+              <span class="trust-label">behandlede patienter</span>
+            </div>
+            <div class="trust-divider" aria-hidden="true"></div>
+            <div class="trust-item">
+              <span class="trust-number">10+</span>
+              <span class="trust-label">års erfaring</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <img src="https://placehold.co/560x480/d8edf0/1a6b72?text=Grocott+Fysioterapi" alt="Grocott Fysioterapi klinik" class="hero-image" width="560" height="480" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== INTRO VIDEO ===================== -->
+    <section class="intro-video" id="introduktion">
+      <div class="container">
+        <div class="section-header center">
+          <p class="section-eyebrow">Bliv klogere</p>
+          <h2>Se, hvad vi kan gøre for dig</h2>
+          <p class="section-lead">Nicolai fortæller om klinikkens tilgang og, hvad du kan forvente af dit første besøg.</p>
+        </div>
+        <div class="video-wrapper">
+          <div class="video-container">
+            <div class="video-placeholder" id="videoPlaceholder" role="button" tabindex="0" aria-label="Afspil introduktionsvideo om Grocott Fysioterapi">
+              <img src="https://placehold.co/1200x675/1a2332/aad4dc?text=▶+Introduktionsvideo" alt="Klik for at afspille introduktionsvideo" class="video-thumb" width="1200" height="675" />
+              <button class="play-btn" aria-label="Afspil video" tabindex="-1">
+                <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.5)"/>
+                  <polygon points="32,24 32,56 60,40" fill="white"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="video-info">
+            <h3>Mød Nicolai Grocott</h3>
+            <p>Autoriseret fysioterapeut med speciale i muskel- og skeletbehandling. Nicolai tager sig tid til at forstå dig og din situation – du er aldrig bare et journalnummer.</p>
+            <ul class="video-points">
+              <li>
+                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="18" height="18"><path d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z" fill="currentColor"/></svg>
+                Personlig og grundig konsultation
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="18" height="18"><path d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z" fill="currentColor"/></svg>
+                Evidensbaseret behandling
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="18" height="18"><path d="M16.7 5.3a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-1.4 0l-4-4a1 1 0 1 1 1.4-1.4L8 12.6l7.3-7.3a1 1 0 0 1 1.4 0z" fill="currentColor"/></svg>
+                Du er ikke bare et journalnummer
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SYMPTOMS / SERVICES ===================== -->
+    <section class="symptoms" id="symptomer">
+      <div class="container">
+        <div class="section-header center">
+          <p class="section-eyebrow">Hvad gør ondt?</p>
+          <h2>Vælg dit symptom</h2>
+          <p class="section-lead">Vi behandler en lang række tilstande. Klik på dit symptom for at booke en tid.</p>
+        </div>
+        <div class="symptoms-grid">
+
+          <a href="#booking" class="symptom-card">
+            <div class="symptom-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32" height="32">
+                <ellipse cx="24" cy="24" rx="6" ry="18" fill="currentColor" opacity="0.18"/>
+                <line x1="16" y1="16" x2="32" y2="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="16" y1="24" x2="32" y2="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="16" y1="32" x2="32" y2="32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="24" cy="8" r="4" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3>Rygsmerter</h3>
+            <p>Akutte og kroniske rygsmerter, diskusprolaps, ischias</p>
+          </a>
+
+          <a href="#booking" class="symptom-card">
+            <div class="symptom-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32" height="32">
+                <circle cx="24" cy="10" r="6" fill="currentColor" opacity="0.25"/>
+                <rect x="21" y="16" width="6" height="18" rx="3" fill="currentColor" opacity="0.2"/>
+                <line x1="24" y1="16" x2="24" y2="34" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Nakkesmerter</h3>
+            <p>Nakkestivhed, piskesmæld, spændingshovedpine</p>
+          </a>
+
+          <a href="#booking" class="symptom-card">
+            <div class="symptom-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32" height="32">
+                <path d="M8 20 Q16 12 24 14 Q36 12 40 22" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+                <circle cx="24" cy="22" r="7" fill="currentColor" opacity="0.2"/>
+                <line x1="24" y1="29" x2="24" y2="42" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Skulder</h3>
+            <p>Rotatorcuff, frozen shoulder, impingement</p>
+          </a>
+
+          <a href="#booking" class="symptom-card">
+            <div class="symptom-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32" height="32">
+                <rect x="20" y="6" width="8" height="16" rx="4" fill="currentColor" opacity="0.2"/>
+                <ellipse cx="24" cy="26" rx="10" ry="7" fill="currentColor" opacity="0.3"/>
+                <line x1="18" y1="33" x2="16" y2="44" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                <line x1="30" y1="33" x2="32" y2="44" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Knæsmerter</h3>
+            <p>Løberknæ, menisk, forreste knæsmerter</p>
+          </a>
+
+          <a href="#booking" class="symptom-card">
+            <div class="symptom-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32" height="32">
+                <path d="M10 20 Q14 10 24 10 Q34 10 38 20 L38 28 Q34 38 24 38 Q14 38 10 28 Z" fill="currentColor" opacity="0.15"/>
+                <circle cx="17" cy="24" r="5" fill="currentColor" opacity="0.4"/>
+                <circle cx="31" cy="24" r="5" fill="currentColor" opacity="0.4"/>
+              </svg>
+            </div>
+            <h3>Hofte</h3>
+            <p>Hoftesmerter, bursitis, artrose, lysken</p>
+          </a>
+
+          <a href="#booking" class="symptom-card">
+            <div class="symptom-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32" height="32">
+                <polygon points="24,6 28,18 42,18 31,26 35,40 24,32 13,40 17,26 6,18 20,18" fill="currentColor" opacity="0.25" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Sportsskader</h3>
+            <p>Forstuvning, senebetændelse, muskelskader</p>
+          </a>
+
+          <a href="#booking" class="symptom-card">
+            <div class="symptom-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32" height="32">
+                <path d="M24 8 C14 8 10 16 10 24 C10 34 18 40 24 42 C30 40 38 34 38 24 C38 16 34 8 24 8Z" fill="currentColor" opacity="0.18"/>
+                <path d="M15 23 Q19 18 24 23 Q29 28 33 23" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Stress &amp; spænding</h3>
+            <p>Muskelspænding, stress-relaterede smerter</p>
+          </a>
+
+          <a href="#booking" class="symptom-card">
+            <div class="symptom-icon">
+              <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="32" height="32">
+                <path d="M8 24 Q16 6 32 14 Q42 18 42 28 Q42 40 24 44 Q6 40 8 24Z" fill="currentColor" opacity="0.15"/>
+                <polyline points="12,30 20,20 26,28 38,14" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="32,14 38,14 38,20" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Genoptræning</h3>
+            <p>Efter operation, fraktur eller langvarig immobilitet</p>
+          </a>
+
+        </div>
+        <div class="symptoms-cta">
+          <p>Kan du ikke finde dit symptom?</p>
+          <a href="#booking" class="btn btn-secondary">Book en gratis afklaring</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BOOKING ===================== -->
+    <section class="booking" id="booking">
+      <div class="container">
+        <div class="section-header center">
+          <p class="section-eyebrow">Ingen venteliste</p>
+          <h2>Ledige tider</h2>
+          <p class="section-lead">Vælg en tid der passer dig. Du opretter dig først ved selve bekræftelsen – ikke nu.</p>
+        </div>
+        <div class="booking-wrapper">
+          <div class="booking-nav">
+            <button class="week-btn" id="prevWeek" aria-label="Forrige uge">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="20" height="20">
+                <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <span class="week-label" id="weekLabel">Indlæser...</span>
+            <button class="week-btn" id="nextWeek" aria-label="Næste uge">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="20" height="20">
+                <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          <div class="calendar-grid" id="calendarGrid" role="grid" aria-label="Ledige tider – vælg en tid"></div>
+          <p class="booking-legend" aria-label="Forklaring til farver">
+            <span class="legend-dot available" aria-hidden="true"></span> Ledig &nbsp;&nbsp;
+            <span class="legend-dot few" aria-hidden="true"></span> Få tilbage &nbsp;&nbsp;
+            <span class="legend-dot booked" aria-hidden="true"></span> Optaget
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TRUSTPILOT ===================== -->
+    <section class="trustpilot-section" id="anmeldelser">
+      <div class="container">
+        <div class="section-header center">
+          <p class="section-eyebrow">Hvad siger vores patienter?</p>
+          <h2>Anmeldelser</h2>
+        </div>
+        <div class="trustpilot-widget">
+          <div class="tp-header">
+            <div class="tp-logo-wrap">
+              <span class="tp-logo-text">Trustpilot</span>
+              <div class="tp-logo-stars" aria-label="Trustpilot logo">
+                <span class="tp-logo-star">★</span><span class="tp-logo-star">★</span><span class="tp-logo-star">★</span><span class="tp-logo-star">★</span><span class="tp-logo-star">★</span>
+              </div>
+            </div>
+            <div class="tp-score-wrap">
+              <div class="tp-stars" aria-label="4,8 ud af 5 stjerner">
+                <span class="tp-star filled">★</span>
+                <span class="tp-star filled">★</span>
+                <span class="tp-star filled">★</span>
+                <span class="tp-star filled">★</span>
+                <span class="tp-star half">★</span>
+              </div>
+              <div class="tp-rating-text">
+                <span class="tp-score-number">4.8</span>
+                <span class="tp-rating-label">Fremragende</span>
+              </div>
+              <p class="tp-review-count">Baseret på <strong>127 anmeldelser</strong></p>
+            </div>
+          </div>
+          <div class="tp-bar-chart" aria-label="Fordeling af anmeldelser">
+            <div class="tp-bar-row"><span>5 ★</span><div class="tp-bar" role="progressbar" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"><div class="tp-bar-fill" style="width:78%"></div></div><span>78%</span></div>
+            <div class="tp-bar-row"><span>4 ★</span><div class="tp-bar" role="progressbar" aria-valuenow="14" aria-valuemin="0" aria-valuemax="100"><div class="tp-bar-fill" style="width:14%"></div></div><span>14%</span></div>
+            <div class="tp-bar-row"><span>3 ★</span><div class="tp-bar" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"><div class="tp-bar-fill" style="width:5%"></div></div><span>5%</span></div>
+            <div class="tp-bar-row"><span>2 ★</span><div class="tp-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100"><div class="tp-bar-fill" style="width:2%"></div></div><span>2%</span></div>
+            <div class="tp-bar-row"><span>1 ★</span><div class="tp-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"><div class="tp-bar-fill" style="width:1%"></div></div><span>1%</span></div>
+          </div>
+          <a href="https://dk.trustpilot.com" target="_blank" rel="noopener noreferrer" class="tp-link">Se alle anmeldelser på Trustpilot →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TESTIMONIALS ===================== -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-header center">
+          <p class="section-eyebrow">Rigtige mennesker, rigtige resultater</p>
+          <h2>Det siger vores patienter</h2>
+        </div>
+        <div class="testimonials-grid">
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 ud af 5 stjerner">★★★★★</div>
+            <blockquote>
+              <p>"Jeg havde haft rygsmerter i over to år og havde mistet håbet om nogensinde at løbe igen. Efter 6 behandlinger hos Nicolai er jeg tilbage på sporet. Han forklarede alt grundigt og lyttede virkelig til mig."</p>
+            </blockquote>
+            <div class="testimonial-author">
+              <img src="https://placehold.co/60x60/d8edf0/1a6b72?text=MH" alt="Maria Hansen" class="testimonial-avatar" width="60" height="60" />
+              <div>
+                <strong>Maria Hansen</strong>
+                <span>Behandlet for rygsmerter</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 ud af 5 stjerner">★★★★★</div>
+            <blockquote>
+              <p>"Enormt professionel og venlig. Nicolai satte sig ind i min situation fra første dag og tilpassede behandlingen løbende. Nakkesmerterne er reduceret med 90%. Varmt anbefalet!"</p>
+            </blockquote>
+            <div class="testimonial-author">
+              <img src="https://placehold.co/60x60/d8edf0/1a6b72?text=TN" alt="Thomas Nielsen" class="testimonial-avatar" width="60" height="60" />
+              <div>
+                <strong>Thomas Nielsen</strong>
+                <span>Behandlet for nakkesmerter</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars" aria-label="5 ud af 5 stjerner">★★★★★</div>
+            <blockquote>
+              <p>"Kom efter en skulderskade fra tennis. Online booking var super nemt – jeg kunne se alle tider med det samme, uden at skulle oprette mig først. Klinikken er ren og moderne."</p>
+            </blockquote>
+            <div class="testimonial-author">
+              <img src="https://placehold.co/60x60/d8edf0/1a6b72?text=LJ" alt="Louise Jensen" class="testimonial-avatar" width="60" height="60" />
+              <div>
+                <strong>Louise Jensen</strong>
+                <span>Behandlet for skulder</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT NICOLAI ===================== -->
+    <section class="about" id="om-nicolai">
+      <div class="container">
+        <div class="about-wrapper">
+          <div class="about-image">
+            <img src="https://placehold.co/480x560/d8edf0/1a6b72?text=Nicolai+Grocott" alt="Nicolai Grocott, autoriseret fysioterapeut" class="about-photo" width="480" height="560" />
+          </div>
+          <div class="about-content">
+            <p class="section-eyebrow">Om os</p>
+            <h2>Mød Nicolai Grocott</h2>
+            <p class="about-lead">Autoriseret fysioterapeut med over 10 års klinisk erfaring i muskel- og skeletbehandling.</p>
+            <p>Nicolai grundlagde Grocott Fysioterapi med et klart mål: at give hver enkelt patient den tid og opmærksomhed, de fortjener. Hos Nicolai er du ikke bare et journalnummer – du er et helt menneske med en unik situation.</p>
+            <p>Med baggrund fra SDU og videreuddannelse inden for sportsrehabilitering og manuel terapi tilbyder Nicolai en evidensbaseret behandlingstilgang, der kombinerer det bedste fra moderne forskning med mange års praktisk erfaring.</p>
+            <div class="about-credentials">
+              <div class="credential">
+                <span class="credential-icon" aria-hidden="true">🎓</span>
+                <span>Autoriseret fysioterapeut (SDU)</span>
+              </div>
+              <div class="credential">
+                <span class="credential-icon" aria-hidden="true">🏥</span>
+                <span>Speciale: Manuel terapi &amp; sportsrehabilitering</span>
+              </div>
+              <div class="credential">
+                <span class="credential-icon" aria-hidden="true">⏱️</span>
+                <span>10+ års klinisk erfaring</span>
+              </div>
+              <div class="credential">
+                <span class="credential-icon" aria-hidden="true">⭐</span>
+                <span>4.8 stjerner på Trustpilot (127 anmeldelser)</span>
+              </div>
+            </div>
+            <a href="#booking" class="btn btn-primary">Book tid hos Nicolai</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SOCIAL MEDIA ===================== -->
+    <section class="social-media" id="sociale-medier">
+      <div class="container">
+        <div class="section-header center">
+          <p class="section-eyebrow">Følg med</p>
+          <h2>Find os på sociale medier</h2>
+          <p class="section-lead">Få tips til en smertefri hverdag, øvelser og nyheder fra klinikken.</p>
+        </div>
+        <div class="social-links">
+
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link facebook" aria-label="Besøg Grocott Fysioterapi på Facebook (åbner i ny fane)">
+            <span class="social-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="26" height="26" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </span>
+            <span class="social-label">Facebook</span>
+            <span class="social-desc">Daglige tips &amp; nyheder</span>
+          </a>
+
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link instagram" aria-label="Besøg Grocott Fysioterapi på Instagram (åbner i ny fane)">
+            <span class="social-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+              </svg>
+            </span>
+            <span class="social-label">Instagram</span>
+            <span class="social-desc">Øvelser &amp; inspiration</span>
+          </a>
+
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link linkedin" aria-label="Besøg Grocott Fysioterapi på LinkedIn (åbner i ny fane)">
+            <span class="social-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="26" height="26" fill="currentColor">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </span>
+            <span class="social-label">LinkedIn</span>
+            <span class="social-desc">Faglige opdateringer</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer" id="kontakt">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="#top" class="logo logo-light" aria-label="Grocott Fysioterapi – gå til toppen">
+              <svg class="logo-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="28" height="28">
+                <circle cx="16" cy="16" r="15" fill="none" stroke="currentColor" stroke-width="2"/>
+                <line x1="16" y1="8" x2="16" y2="24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="8" y1="16" x2="24" y2="16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+              <span class="logo-text">Grocott <strong>Fysioterapi</strong></span>
+            </a>
+            <p>Professionel fysioterapi med fokus på dig og din genopretning.</p>
+            <div class="footer-social" aria-label="Sociale medier">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="16" height="16" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+            </div>
+          </div>
+          <nav class="footer-nav" aria-label="Sidefodnavigation">
+            <h3>Navigation</h3>
+            <ul>
+              <li><a href="#symptomer">Symptomer</a></li>
+              <li><a href="#booking">Book tid</a></li>
+              <li><a href="#anmeldelser">Anmeldelser</a></li>
+              <li><a href="#om-nicolai">Om Nicolai</a></li>
+              <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+          </nav>
+          <div class="footer-contact">
+            <h3>Kontakt</h3>
+            <address>
+              <p>
+                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" fill="currentColor"><path d="M10 2a6 6 0 0 0-6 6c0 4.5 6 10 6 10s6-5.5 6-10a6 6 0 0 0-6-6zm0 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
+                Eksempelvej 12, 5000 Odense C
+              </p>
+              <p>
+                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" fill="currentColor"><path d="M2 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 .95.68l1 3a1 1 0 0 1-.27 1.05L6.7 8.17A11 11 0 0 0 11.83 13.3l1.44-1.48a1 1 0 0 1 1.05-.27l3 1a1 1 0 0 1 .68.95V17a1 1 0 0 1-1 1C7.16 18 2 12.84 2 3z"/></svg>
+                <a href="tel:+4512345678">+45 12 34 56 78</a>
+              </p>
+              <p>
+                <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="14" height="14" fill="currentColor"><path d="M2 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01L10 10l6-5.99V4H4zm0 2.24V16h12V6.24l-6 5.99-6-5.99z"/></svg>
+                <a href="mailto:info@grocottfysioterapi.dk">info@grocottfysioterapi.dk</a>
+              </p>
+            </address>
+          </div>
+          <div class="footer-hours">
+            <h3>Åbningstider</h3>
+            <dl>
+              <dt>Mandag – fredag</dt><dd>08:00 – 18:00</dd>
+              <dt>Lørdag</dt><dd>09:00 – 13:00</dd>
+              <dt>Søndag</dt><dd>Lukket</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 Grocott Fysioterapi. Alle rettigheder forbeholdes.</p>
+          <div class="footer-links">
+            <a href="#">Privatlivspolitik</a>
+            <a href="#">Cookiepolitik</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===================== BOOKING MODAL ===================== -->
+    <div class="modal-overlay" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+      <div class="modal">
+        <button class="modal-close" id="modalClose" aria-label="Luk dialog">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="18" height="18">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <!-- Step 1: Login / Register -->
+        <div class="modal-step" id="stepConfirm">
+          <h2 id="modalTitle">Bekræft din tid</h2>
+          <div class="selected-time-display" id="selectedTimeDisplay" aria-live="polite"></div>
+          <p class="modal-subtext">For at gennemføre bookingen skal du logge ind eller oprette en gratis konto.</p>
+          <div class="modal-tabs" role="tablist">
+            <button class="modal-tab active" data-tab="login" role="tab" aria-selected="true" id="tabLogin" aria-controls="loginForm">Log ind</button>
+            <button class="modal-tab" data-tab="register" role="tab" aria-selected="false" id="tabRegister" aria-controls="registerForm">Opret konto</button>
+          </div>
+          <form class="auth-form active" id="loginForm" novalidate role="tabpanel" aria-labelledby="tabLogin">
+            <div class="form-group">
+              <label for="loginEmail">E-mail</label>
+              <input type="email" id="loginEmail" name="email" placeholder="din@email.dk" autocomplete="email" required />
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Adgangskode</label>
+              <input type="password" id="loginPassword" name="password" placeholder="Din adgangskode" autocomplete="current-password" required />
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Log ind og bekræft tid</button>
+            <p class="form-hint"><a href="#">Glemt adgangskode?</a></p>
+          </form>
+          <form class="auth-form" id="registerForm" novalidate role="tabpanel" aria-labelledby="tabRegister" hidden>
+            <div class="form-group">
+              <label for="regName">Fulde navn</label>
+              <input type="text" id="regName" name="name" placeholder="Dit fulde navn" autocomplete="name" required />
+            </div>
+            <div class="form-group">
+              <label for="regEmail">E-mail</label>
+              <input type="email" id="regEmail" name="email" placeholder="din@email.dk" autocomplete="email" required />
+            </div>
+            <div class="form-group">
+              <label for="regPhone">Telefon</label>
+              <input type="tel" id="regPhone" name="phone" placeholder="Fx 12 34 56 78" autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="regPassword">Adgangskode</label>
+              <input type="password" id="regPassword" name="password" placeholder="Mindst 8 tegn" autocomplete="new-password" required />
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Opret konto og book tid</button>
+          </form>
+        </div>
+
+        <!-- Step 2: Success -->
+        <div class="modal-step" id="stepSuccess" hidden>
+          <div class="success-icon" aria-hidden="true">✓</div>
+          <h2>Din tid er booket!</h2>
+          <p id="successMessage" aria-live="polite"></p>
+          <p>Du modtager en bekræftelse på din e-mail inden for få minutter.</p>
+          <button class="btn btn-primary btn-full" id="closeSuccess">Luk</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="JS/main.js"></script>
   </body>
 </html>
