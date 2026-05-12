@@ -1,15 +1,14 @@
 /* Channe Lykke Krog - Inspiration til burger menuen er hentet fra ChatGPT - Se AI Prompt dokument */
 /* burger menu navigation */
 const menuItems = [
-    { menuName: 'Forside', link: 'index.html' },
     { menuName: 'Behandlinger', link: 'behandlinger.html' },
+    { menuName: 'Holdtræning', link: 'holdtraening.html' },
     { menuName: 'Om klinikken', link: 'omklinikken.html' },
     { menuName: 'Priser', link: 'priser.html' },
-    { menuName: 'Hvad siger andre', link: 'hvadsigerandre.html' },
-    { menuName: 'Kontakt', link: 'kontakt.html' },
-    { menuName: 'Holdtræning', link: 'holdtraening.html' },
     { menuName: 'Til forældre', link: 'tilforaeldre.html' },
     { menuName: 'Til erhverv', link: 'tilerhverv.html' },
+    { menuName: 'Hvad siger andre?', link: 'hvadsigerandre.html' },
+    { menuName: 'Kontakt', link: 'kontakt.html' },
     { menuName: 'Book tid', link: 'bookingtrin1.html' }
 ];
 
