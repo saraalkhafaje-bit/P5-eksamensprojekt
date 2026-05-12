@@ -1,1 +1,58 @@
 /* Main stylesheet for Grocott Fysioterapi */
+html, body {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-blue100: #18446F;
+  --color-blue200: #30B1D9;
+  --color-blue300: #D0E2EB;
+  --color-orange100: #F3911C;
+  --color-neutral100: #2A2A2A;
+  --color-neutral200: #6F6F6F;
+  --color-neutral300: #E8E8E8;
+  --color-neutral400: #fff;
+}
+
+/* ── Navbar – mobile first ── */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  position: relative;
+}
+
+.navbar__logo {
+  height: 48px;
+  display: block;
+}
+
+/* ── Dropdown-menu (skjult som standard) ── */
+.navbar__menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  z-index: 100;
+}
+
+.navbar__menu.active {
+  display: flex;
+}
+
+.navbar__menu-link {
+  padding: 12px 24px;
+  text-decoration: none;
+  display: block;
+}
+

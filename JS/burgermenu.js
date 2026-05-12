@@ -2,11 +2,15 @@
 /* burger menu navigation */
 const menuItems = [
     { menuName: 'Forside', link: 'index.html' },
-    { menuName: 'Events', link: 'events.html' },
-    { menuName: 'Om os', link: 'om-os.html' },
-    { menuName: 'FAQ', link: 'faq.html' },
+    { menuName: 'Behandlinger', link: 'behandlinger.html' },
+    { menuName: 'Om klinikken', link: 'omklinikken.html' },
+    { menuName: 'Priser', link: 'priser.html' },
+    { menuName: 'Hvad siger andre', link: 'hvadsigerandre.html' },
     { menuName: 'Kontakt', link: 'kontakt.html' },
-    { menuName: 'Bliv frivillig', link: 'blivfrivillig.html' }
+    { menuName: 'Holdtræning', link: 'holdtraening.html' },
+    { menuName: 'Til forældre', link: 'tilforaeldre.html' },
+    { menuName: 'Til erhverv', link: 'tilerhverv.html' },
+    { menuName: 'Book tid', link: 'bookingtrin1.html' }
 ];
 
 const navbarMenu = document.getElementById('navbarMenu');

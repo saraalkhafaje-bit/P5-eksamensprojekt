@@ -4,29 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grocott Fysioterapi</title>
-   
-    <link rel="stylesheet" href="Main.css" />
-   
+    <link rel="stylesheet" href="Main.css"/>
+  </head>
+  <body>
+
     <nav class="navbar">
-            <a href="index.html">
-                <img src="Assets/logo.svg" alt="Grocott Fysioterapi logo" class="navbar__logo">
-            </a>
-            <button class="navbar__burger" id="navbarBurger" aria-label="Åbn menu">
-                <span class="navbar__burger-line"></span>
-                <span class="navbar__burger-line"></span>
-                <span class="navbar__burger-line"></span>
-            </button>
-            <div class="navbar__menu" id="navbarMenu">
-                <a href="index.html" class="navbar__menu-link">Forside</a>
-                <a href="behandlinger.html" class="navbar__menu-link">Behandlinger</a>
-                <a href="omklinikken.html" class="navbar__menu-link">Om klinikken</a>
-                <a href="priser.html" class="navbar__menu-link">Priser</a>
-                <a href="hvadsigerandre.html" class="navbar__menu-link">Hvad siger andre</a>
-                <a href="holdtraening.html" class="navbar__menu-link">Holdtræning</a>
-                <a href="tilforaeldre.html" class="navbar__menu-link">Til forældre</a>
-                <a href="tilerhverv.html" class="navbar__menu-link">Til erhverv</a>
-                <a href="kontakt.html" class="navbar__menu-link">Kontakt</a>
-                <a href="bookingtrin1.html" class="navbar__menu-link">Bliv frivillig</a>
-            </div>
-        </nav>
-        <!-- Forside indhold kommer her -->
+      <a href="index.html">
+        <img src="Assets/logo.svg" alt="Grocott Fysioterapi logo" class="navbar__logo">
+      </a>
+
+      <!-- Burger-knap med W3 SVG -->
+      <button id="navbarBurger" class="navbar__burger" aria-label="Åbn menu" aria-expanded="false" aria-controls="navbarMenu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </svg>
+      </button>
+
+      <!-- Menu-links – udfyldes dynamisk af burgermenu.js -->
+      <div id="navbarMenu" class="navbar__menu"></div>
+    </nav>
+
+    <!-- Forside indhold kommer her -->
+
+    <script src="JS/burgermenu.js"></script>
+  </body>
+</html>
