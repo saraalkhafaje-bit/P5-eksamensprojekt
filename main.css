@@ -9,22 +9,22 @@
 
 :root {
   /* ---------- Farver: primær (blå) ---------- */
-  --blue-100: #18446F;   /* mørk – bærende elementer, nav, sekundære knapper */
+  --blue-100: #194470;   /* mørk – bærende elementer, nav, sekundære knapper */
   --blue-200: #30B1D9;   /* fremhæv info */
-  --blue-300: #D0E2EB;   /* lyse sektionsadskillere, dekoration */
+  --blue-300: #D1E2EB;   /* lyse sektionsadskillere, dekoration */
 
   /* ---------- Accent (orange) – KUN til CTA / vigtigste handlinger ---------- */
-  --orange-100: #F3911C;
+  --orange-100: #F2921D;
 
   /* ---------- Neutrale ---------- */
-  --neutral-100: #2A2A2A;   /* off-black / skriftfarve */
-  --neutral-200: #6F6F6F;   /* sekundær tekst, detaljer */
+  --neutral-100: #292929;   /* off-black / skriftfarve */
+  --neutral-200: #707070;   /* sekundær tekst, detaljer */
   --neutral-300: #E8E8E8;   /* skillelinjer, borders, pagination */
   --neutral-400: #FFFFFF;   /* baggrund */
 
   /* ---------- System / feedback ---------- */
-  --system-green: #2EA66B;
-  --system-red:   #D9342B;
+  --system-green: #00B579;
+  --system-red:   #E03838;
 
   /* ---------- Spacing (8-point grid) ---------- */
   --space-4:    4px;   /* undtagelse: kun ikoner/badges */

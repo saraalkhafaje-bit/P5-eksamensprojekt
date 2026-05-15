@@ -13,8 +13,8 @@
       .zone:hover,
       .zone:focus,
       .zone:active {
-        fill: rgba(243, 145, 28, 0.35);
-        filter: drop-shadow(0 0 14px rgba(243, 145, 28, 0.85));
+        fill: rgba(242, 146, 29, 0.35);
+        filter: drop-shadow(0 0 14px rgba(242, 146, 29, 0.85));
       }
       @media (prefers-reduced-motion: reduce) {
         .zone { transition: none; }
