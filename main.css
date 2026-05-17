@@ -26,26 +26,26 @@
   --system-green: #00B579;
   --system-red:   #E03838;
 
-  /* ---------- Spacing (8-point grid) ---------- */
-  --space-4:    4px;   /* undtagelse: kun ikoner/badges */
-  --space-8:    8px;
-  --space-16:  16px;
-  --space-24:  24px;   /* standard mellem elementer */
-  --space-32:  32px;
-  --space-40:  40px;   /* standard mellem sektioner */
-  --space-48:  48px;
-  --space-56:  56px;
-  --space-64:  64px;
-  --space-72:  72px;
-  --space-80:  80px;
-  --space-88:  88px;
-  --space-96:  96px;
-  --space-104: 104px;
-  --space-120: 120px;
-  --space-128: 128px;
+  /* ---------- Spacing (8-point grid, rem skalerer med browser-font) ---------- */
+  --space-4:    0.25rem;   /* undtagelse: kun ikoner/badges */
+  --space-8:    0.5rem;
+  --space-16:   1rem;
+  --space-24:   1.5rem;    /* standard mellem elementer */
+  --space-32:   2rem;
+  --space-40:   2.5rem;    /* standard mellem sektioner */
+  --space-48:   3rem;
+  --space-56:   3.5rem;
+  --space-64:   4rem;
+  --space-72:   4.5rem;
+  --space-80:   5rem;
+  --space-88:   5.5rem;
+  --space-96:   6rem;
+  --space-104:  6.5rem;
+  --space-120:  7.5rem;
+  --space-128:  8rem;
 
   /* ---------- Form ---------- */
-  --radius: 8px;
+  --radius: 0.5rem;
 
   /* ---------- Navbar-effekter ---------- */
   --color-navbar-glass: rgba(255, 255, 255, 0.78);
@@ -95,22 +95,22 @@ h4 {
 
 h1 {
   font-family: "Report", "IBM Plex Sans", sans-serif;
-  font-size: 32px;          /* mobil */
+  font-size: 2rem;           /* 32px mobil */
   font-weight: 700;
 }
 
 h2 {
-  font-size: 28px;          /* mobil */
+  font-size: 1.75rem;        /* 28px mobil */
   font-weight: 600;
 }
 
 h3 {
-  font-size: 22px;
+  font-size: 1.375rem;       /* 22px */
   font-weight: 600;
 }
 
 h4 {
-  font-size: 18px;
+  font-size: 1.125rem;       /* 18px */
   font-weight: 600;
 }
 
@@ -154,7 +154,7 @@ a:focus-visible {
   font-family: inherit;
   font-size: 1rem;
   font-weight: 600;
-  padding: var(--space-8) var(--space-24);
+  padding: 0.5em 1.5em;    /* em: skalerer med knapens egen font-size */
   border: none;
   border-radius: var(--radius);
   text-decoration: none;
@@ -172,12 +172,14 @@ a:focus-visible {
 }
 
 .knap--sekundaer {
-  background-color: var(--blue-100);
-  color: var(--neutral-400);
+  background-color: transparent;
+  color: var(--orange-100);
+  border: 4px solid var(--orange-100);   /* designsystem: sekundær CTA = 4px */
 }
 
 .knap--sekundaer:hover {
-  background-color: var(--blue-200);
+  background-color: var(--orange-100);
+  color: var(--neutral-400);
 }
 
 .knap:focus-visible {
@@ -266,36 +268,21 @@ a:focus-visible {
 }
 
 .navbar__burger svg {
+  display: block;
+  fill: var(--color-blue100);
+}
+
+/* Luk-ikonet er skjult som standard; vises når menu er aktiv */
+.navbar__burger-ikon--luk {
   display: none;
 }
 
-.navbar__burger::before,
-.navbar__burger::after {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 2px;
-  background-color: var(--color-blue100);
-  border-radius: 8px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+.navbar__burger.active .navbar__burger-ikon--aaben {
+  display: none;
 }
 
-.navbar__burger::before {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 0 var(--color-blue100);
-}
-
-.navbar__burger::after {
-  transform: translateY(6px);
-}
-
-.navbar__burger.active::before {
-  transform: rotate(45deg);
-  box-shadow: none;
-}
-
-.navbar__burger.active::after {
-  transform: rotate(-45deg);
+.navbar__burger.active .navbar__burger-ikon--luk {
+  display: block;
 }
 
 .navbar__menu {
@@ -391,39 +378,6 @@ a:focus-visible {
     height: 32px;
   }
 
-  .navbar__burger svg {
-    display: none;
-  }
-
-  .navbar__burger::before,
-  .navbar__burger::after {
-    content: "";
-    position: absolute;
-    width: 22px;
-    height: 2px;
-    background-color: var(--color-blue100);
-    border-radius: 8px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-
-  .navbar__burger::before {
-    transform: translateY(-6px);
-    box-shadow: 0 6px 0 var(--color-blue100);
-  }
-
-  .navbar__burger::after {
-    transform: translateY(6px);
-  }
-
-  .navbar__burger.active::before {
-    transform: rotate(45deg);
-    box-shadow: none;
-  }
-
-  .navbar__burger.active::after {
-    transform: rotate(-45deg);
-  }
-
   .navbar__menu {
     display: flex;
     flex-direction: column;
@@ -461,17 +415,17 @@ a:focus-visible {
 
 /* ----------------- Desktop (fra 1095px) ------------------- */
 @media (min-width: 1095px) {
-  html, body {
-    font-size: 18px;
+  body {
+    font-size: 1.125rem;   /* 18px desktop brødtekst; html forbliver 16px so rem-base er stabil */
   }
 
   /* ---------- Typografi: desktop-størrelser ---------- */
   h1 {
-    font-size: 40px;
+    font-size: 2.5rem;     /* 40px */
   }
 
   h2 {
-    font-size: 36px;
+    font-size: 2.25rem;    /* 36px */
   }
 
     /*-------------- Burger-knap styling ----------------------*/
@@ -523,4 +477,865 @@ a:focus-visible {
   /*---------------Burger-knap styling slut-----------------*/
 
 
+}
+
+
+/* =========================================================
+   FORSIDE
+   ========================================================= */
+
+/* ── Hero ─────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__billede {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(25, 68, 112, 0.25), rgba(25, 68, 112, 0.7));
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-32) var(--space-16);
+}
+
+.hero__indhold {
+  color: var(--neutral-400);
+  max-width: 600px;
+}
+
+.hero__etiket {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--blue-300);
+  margin-bottom: var(--space-8);
+}
+
+.hero__overskrift {
+  color: var(--neutral-400);
+  margin-bottom: var(--space-16);
+}
+
+.hero__tekst {
+  margin-bottom: var(--space-24);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero__dots {
+  position: absolute;
+  bottom: var(--space-16);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--space-8);
+}
+
+.hero__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.hero__dot--aktiv {
+  background-color: var(--neutral-400);
+}
+
+/* ── Om klinikken ─────────────────────────────────────────── */
+.om-klinikken__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.om-klinikken__tekst {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+.om-klinikken__billede {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+}
+
+.om-klinikken__liste {
+  padding-left: var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.om-klinikken__liste li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.om-klinikken__knap {
+  display: block;
+  text-align: center;
+}
+
+/* ── Find din behandling (kropsfigur) ─────────────────────── */
+.find-behandling__tekst {
+  margin-bottom: var(--space-24);
+}
+
+.find-behandling__figur {
+  display: flex;
+  justify-content: center;
+}
+
+.find-behandling__svg {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 1375 / 1536;
+}
+
+.find-behandling__knap-wrapper {
+  text-align: center;
+  margin-top: var(--space-24);
+}
+
+/* ── Øvrige behandlinger ─────────────────────────────────────────── */
+.oevrige-behandlinger__underoverskrift {
+  margin-top: var(--space-16);
+}
+
+.oevrige-behandlinger__billede {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+  margin-block: var(--space-24);
+}
+
+.oevrige-behandlinger__knap-wrapper {
+  text-align: center;
+}
+
+.anmeldelser {
+  background-color: var(--neutral-300);
+}
+
+.anmeldelser__overskrift {
+  margin-bottom: var(--space-16);
+}
+
+.anmeldelser__intro {
+  margin-bottom: var(--space-24);
+}
+
+.anmeldelse-karrusel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  margin-bottom: var(--space-24);
+}
+
+.anmeldelse-karrusel__pil {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: var(--neutral-100);
+  cursor: pointer;
+  padding: var(--space-4);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.anmeldelse-karrusel__pil:hover {
+  color: var(--blue-100);
+}
+
+.anmeldelse-kort {
+  flex: 1;
+  background-color: var(--neutral-400);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.anmeldelse-kort__billede {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.anmeldelse-kort__indhold {
+  padding: var(--space-16) var(--space-24);
+}
+
+.anmeldelse-kort__citat {
+  font-style: italic;
+  color: var(--neutral-100);
+  margin-bottom: var(--space-8);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.anmeldelse-kort__navn {
+  font-weight: 600;
+  color: var(--blue-100);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.anmeldelse-kort__tilstand {
+  font-weight: 400;
+  color: var(--neutral-200);
+}
+
+.anmeldelers__knap-wrapper {
+  text-align: center;
+}
+   ========================================================= */
+
+.behandlinger-hero {
+  background-color: var(--blue-100);
+  color: var(--neutral-400);
+  text-align: center;
+  padding-block: var(--space-64);
+}
+
+.behandlinger-hero h1 {
+  color: var(--neutral-400);
+  margin-bottom: var(--space-16);
+}
+
+.behandlinger-hero p {
+  max-width: 640px;
+  margin-inline: auto;
+  color: var(--blue-300);
+}
+
+.behandling-sektion {
+  padding-block: var(--space-64);
+}
+
+.behandling-sektion--lys {
+  background-color: var(--neutral-300);
+}
+
+.behandling-sektion__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.behandling-sektion__billede img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.behandling-sektion__tekst {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+}
+
+@media (min-width: 768px) {
+  .behandling-sektion__wrapper {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-48);
+  }
+
+  .behandling-sektion__billede,
+  .behandling-sektion__tekst {
+    flex: 1;
+  }
+
+  .behandling-sektion__wrapper--omvendt {
+    flex-direction: row-reverse;
+  }
+}
+
+/* =========================================================
+   BOOKING SIDE
+   ========================================================= */
+
+.booking__titel {
+  margin-bottom: var(--space-32);
+}
+
+/* ── Trin-indikator ──────────────────────────────────────── */
+.booking__trin-indikator {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: var(--space-40);
+}
+
+.booking__trin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.booking__trin-cirkel {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--neutral-300);
+  color: var(--neutral-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.booking__trin--aktiv .booking__trin-cirkel {
+  background-color: var(--blue-100);
+  color: var(--neutral-400);
+}
+
+.booking__trin--fuldfoert .booking__trin-cirkel {
+  background-color: var(--blue-200);
+  color: var(--neutral-400);
+}
+
+.booking__trin-tekst {
+  font-size: 0.8rem;
+  color: var(--neutral-200);
+  white-space: nowrap;
+}
+
+.booking__trin--aktiv .booking__trin-tekst,
+.booking__trin--fuldfoert .booking__trin-tekst {
+  color: var(--blue-100);
+  font-weight: 600;
+}
+
+.booking__trin-streg {
+  flex: 1;
+  height: 2px;
+  background-color: var(--neutral-300);
+  margin-bottom: var(--space-24);
+}
+
+/* ── Trin-sektioner ─────────────────────────────────────── */
+.booking__sektion--skjult {
+  display: none;
+}
+
+.booking__sektion-overskrift {
+  margin-bottom: var(--space-24);
+}
+
+/* ── Behandlingsvalg (trin 1) ───────────────────────────── */
+.booking__behandlinger {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  margin-bottom: var(--space-32);
+}
+
+.booking__behandling-kort {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-16);
+  padding: var(--space-16);
+  border: 2px solid var(--neutral-300);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.booking__behandling-kort input[type="radio"] {
+  margin-top: 3px;
+  flex-shrink: 0;
+  accent-color: var(--blue-100);
+  width: 18px;
+  height: 18px;
+}
+
+.booking__behandling-kort--valgt {
+  border-color: var(--blue-100);
+  background-color: rgba(25, 68, 112, 0.05);
+}
+
+.booking__behandling-indhold strong {
+  display: block;
+  color: var(--neutral-100);
+  margin-bottom: var(--space-4);
+}
+
+.booking__behandling-indhold p {
+  font-size: 0.9rem;
+  color: var(--neutral-200);
+  margin: 0;
+}
+
+/* ── Kalender (trin 2) ──────────────────────────────────── */
+.booking__kalender {
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--radius);
+  padding: var(--space-16);
+  margin-bottom: var(--space-24);
+  max-width: 400px;
+}
+
+.booking__kalender-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-16);
+}
+
+.booking__kalender-maaned {
+  font-weight: 700;
+  color: var(--neutral-100);
+  text-transform: capitalize;
+}
+
+.booking__kalender-pil {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--blue-100);
+  cursor: pointer;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius);
+  line-height: 1;
+  transition: background-color 0.2s;
+}
+
+.booking__kalender-pil:hover {
+  background-color: var(--neutral-300);
+}
+
+.booking__kalender-dage-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--neutral-200);
+  margin-bottom: var(--space-8);
+}
+
+.booking__kalender-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.booking__kalender-celle {
+  aspect-ratio: 1;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  cursor: default;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking__kalender-celle--tilgaengelig {
+  cursor: pointer;
+  color: var(--neutral-100);
+}
+
+.booking__kalender-celle--tilgaengelig:hover {
+  background-color: var(--blue-300);
+}
+
+.booking__kalender-celle--deaktiveret {
+  color: var(--neutral-200);
+  opacity: 0.4;
+}
+
+.booking__kalender-celle--valgt {
+  background-color: var(--blue-100) !important;
+  color: var(--neutral-400) !important;
+  font-weight: 700;
+}
+
+/* ── Tidslots ───────────────────────────────────────────── */
+.booking__tidslots {
+  margin-bottom: var(--space-32);
+}
+
+.booking__tidslots-overskrift {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--neutral-100);
+  margin-bottom: var(--space-16);
+}
+
+.booking__tidslots-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.booking__tidslot {
+  padding: var(--space-8) var(--space-16);
+  border: 2px solid var(--blue-100);
+  border-radius: var(--radius);
+  background: none;
+  color: var(--blue-100);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.booking__tidslot:hover {
+  background-color: var(--blue-300);
+}
+
+.booking__tidslot--valgt {
+  background-color: var(--blue-100);
+  color: var(--neutral-400);
+}
+
+/* ── Formular (trin 3) ──────────────────────────────────── */
+.booking__formular {
+  max-width: 560px;
+}
+
+.booking__felt-gruppe {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-16);
+}
+
+.booking__label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--neutral-100);
+}
+
+.booking__input {
+  padding: var(--space-12) var(--space-16);
+  border: 1px solid var(--neutral-300);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--neutral-100);
+  background-color: var(--neutral-400);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.booking__input:focus {
+  outline: none;
+  border-color: var(--blue-200);
+  box-shadow: 0 0 0 3px rgba(48, 177, 217, 0.2);
+}
+
+.booking__input--tekstomraade {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ── Navigering ─────────────────────────────────────────── */
+.booking__navigering {
+  display: flex;
+  gap: var(--space-16);
+  margin-top: var(--space-32);
+}
+
+/* ── Bekræftelse ────────────────────────────────────────── */
+.booking__bekraeftelse {
+  text-align: center;
+  padding: var(--space-48) var(--space-16);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.booking__bekraeftelse-ikon {
+  width: 64px;
+  height: 64px;
+  color: var(--blue-200);
+  margin-bottom: var(--space-24);
+}
+
+.booking__bekraeftelse h2 {
+  margin-bottom: var(--space-16);
+}
+
+.booking__bekraeftelse p {
+  margin-bottom: var(--space-16);
+  color: var(--neutral-200);
+}
+
+.booking__bekraeftelse .knap {
+  margin-top: var(--space-16);
+}
+
+/* ── Tablet (768px) ─────────────────────────────────────── */
+@media (min-width: 768px) {
+  .booking__behandlinger {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .booking__behandling-kort {
+    flex: 1 1 calc(50% - var(--space-16));
+  }
+
+  .booking__kalender {
+    max-width: 480px;
+  }
+}
+
+/* =========================================================
+   BROEDKRUMME (Breadcrumb navigation)
+   ========================================================= */
+
+.broedkrumme {
+  background-color: var(--neutral-300);
+  padding: var(--space-8) var(--space-16);
+}
+
+.broedkrumme__indhold {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.broedkrumme__liste {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+}
+
+.broedkrumme__punkt {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: var(--neutral-200);
+}
+
+.broedkrumme__punkt + .broedkrumme__punkt::before {
+  content: '/';
+  margin: 0 var(--space-8);
+  color: var(--neutral-200);
+}
+
+.broedkrumme__link {
+  color: var(--blue-100);
+  text-decoration: none;
+  transition: text-decoration 0.2s;
+}
+
+.broedkrumme__link:hover {
+  text-decoration: underline;
+}
+
+.broedkrumme__punkt--aktiv {
+  color: var(--neutral-100);
+  font-weight: 600;
+}
+
+/* =========================================================
+   SIDEFOD (Footer)
+   ========================================================= */
+
+.sidefod {
+  background-color: var(--blue-300);
+  padding: var(--space-40) var(--space-16) var(--space-32);
+}
+
+.sidefod__indhold {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.sidefod__logo-wrapper {
+  display: inline-block;
+}
+
+.sidefod__logo {
+  height: 44px;
+  width: auto;
+}
+
+/* ── Kolonne-grid ──────────────────────────────────────── */
+
+.sidefod__grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+.sidefod__overskrift {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--neutral-100);
+  margin: 0 0 var(--space-8);
+}
+
+.sidefod__kolonne p {
+  font-size: 0.95rem;
+  color: var(--neutral-100);
+  line-height: 1.65;
+  margin: 0 0 var(--space-4);
+}
+
+.sidefod__adresse {
+  font-style: normal;
+}
+
+.sidefod__adresse p {
+  font-size: 0.95rem;
+  color: var(--neutral-100);
+  line-height: 1.65;
+  margin: 0 0 var(--space-4);
+}
+
+/* ── Links ─────────────────────────────────────────────── */
+
+.sidefod__liste {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.sidefod__link {
+  color: var(--blue-100);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: text-decoration 0.2s;
+}
+
+.sidefod__link:hover {
+  text-decoration: underline;
+}
+
+/* ── Bund-sektion ──────────────────────────────────────── */
+
+.sidefod__bund {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+  padding-top: var(--space-24);
+  border-top: 1px solid rgba(25, 68, 112, 0.25);
+}
+
+.sidefod__bund-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sidefod__firmanavn {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--neutral-100);
+  margin: 0;
+}
+
+/* ── Trustpilot ────────────────────────────────────────── */
+
+.sidefod__trustpilot {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  margin-top: var(--space-4);
+  text-decoration: none;
+  color: inherit;
+}
+
+.sidefod__trustpilot:hover .sidefod__rating-tekst {
+  text-decoration: underline;
+}
+
+.sidefod__stjerner {
+  display: flex;
+  gap: 3px;
+}
+
+.sidefod__stjerne {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.sidefod__rating-tekst {
+  font-size: 0.9rem;
+  color: var(--neutral-100);
+}
+
+/* ── Sociale ikoner ────────────────────────────────────── */
+
+.sidefod__sociale {
+  display: flex;
+  gap: var(--space-16);
+}
+
+.sidefod__sociale-knap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--blue-100);
+  color: var(--neutral-400);
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.sidefod__sociale-knap:hover {
+  background-color: var(--blue-200);
+}
+
+.sidefod__sociale-knap svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* ── Tablet (768px) ────────────────────────────────────── */
+
+@media (min-width: 768px) {
+  .sidefod__grid {
+    flex-direction: row;
+    gap: var(--space-48);
+    align-items: flex-start;
+  }
+
+  .sidefod__kolonne {
+    flex: 1;
+  }
+
+  .sidefod__bund {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

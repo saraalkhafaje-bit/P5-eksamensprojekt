@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="da">
   <head>
     <meta charset="UTF-8" />
@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="main.css"/>
   </head>
   <body>
+    <!-- Ikonsamling fra Det Faelles Designsystem (designsystem.dk) -->
+    <div style="display:none" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <symbol id="menu" viewBox="0 0 24 24">
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </symbol>
+        <symbol id="close" viewBox="0 0 24 24">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </symbol>
+      </svg>
+    </div>
 
     <nav class="navbar">
       <a href="index.html">
@@ -15,8 +26,11 @@
 
       <!-- Burger-knap -->
       <button id="navbarBurger" class="navbar__burger" aria-label="Åbn menu" aria-expanded="false" aria-controls="navbarMenu">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
-          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        <svg aria-hidden="true" focusable="false" class="navbar__burger-ikon navbar__burger-ikon--aaben" width="24" height="24" viewBox="0 0 24 24">
+          <use href="#menu"></use>
+        </svg>
+        <svg aria-hidden="true" focusable="false" class="navbar__burger-ikon navbar__burger-ikon--luk" width="24" height="24" viewBox="0 0 24 24">
+          <use href="#close"></use>
         </svg>
       </button>
 
@@ -24,7 +38,167 @@
       <div id="navbarMenu" class="navbar__menu"></div>
     </nav>
 
-    <!-- Forside indhold kommer her -->
+    <main>
+
+      <!-- ── Hero ─────────────────────────────────────────── -->
+      <section class="hero">
+        <div class="hero__baggrund">
+          <img src="assets/behandlerportraet.webp" alt="Grocott Fysioterapi" class="hero__billede">
+          <div class="hero__dots" aria-hidden="true">
+            <span class="hero__dot hero__dot--aktiv"></span>
+            <span class="hero__dot"></span>
+            <span class="hero__dot"></span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Om klinikken ──────────────────────────────────── -->
+      <section class="sektion om-klinikken">
+        <div class="sektion__indhold om-klinikken__wrapper">
+          <div class="om-klinikken__tekst">
+            <h2>Professionel fysioterapi i hjertet af Langeskov</h2>
+            <p>Hos Grocott Fysioterapi prioriterer jeg tid til den enkelte. Jeg kombinerer evidensbaseret viden med manuel behandling for at sikre dig en hurtig vej ud af smerterne. Du behøver ingen lægehenvisning – vi tager hånd om problemet med det samme.</p>
+            <p><strong>Hvorfor vælge Grocott Fysioterapi?</strong></p>
+            <ul class="om-klinikken__liste">
+              <li><strong>Ingen ventetid:</strong> Hurtig opstart af dit forløb.</li>
+              <li><strong>Mere tid:</strong> Længere konsultationer og fokus på helheden.</li>
+              <li><strong>Fuldt overblik:</strong> Gennemsigtige priser og hjælp til tilskud.</li>
+            </ul>
+          </div>
+          <div class="om-klinikken__billede-wrapper">
+            <img src="assets/closeupportraet.webp" alt="Behandling hos Grocott Fysioterapi" class="om-klinikken__billede">
+          </div>
+          <a href="booking.html" class="knap knap--primaer om-klinikken__knap">Book din tid her</a>
+        </div>
+      </section>
+
+      <!-- ── Hvor har du ondt? (klikbar kropsfigur) ───────── -->
+      <section class="sektion find-behandling">
+        <div class="sektion__indhold">
+          <div class="find-behandling__tekst">
+            <h2>Hvor har du ondt?</h2>
+            <p>Du behøver ikke en diagnose for at få hjælp. Klik på det område af kropskortet, der driller dig, for at læse mere om årsager og behandling.</p>
+            <p>Da smerter ofte hænger sammen på tværs af kroppen, hjælper kortet dig med at se, hvordan jeg behandler helheden for at skabe varig lindring. Klik på start-knappen og kom i gang.</p>
+            <p>Gør din krop en tjeneste!<br>Vælg et punkt på figuren og tag det første skridt mod en hverdag med færre smerter.</p>
+          </div>
+          <div class="find-behandling__figur">
+            <object
+              data="assets/kropsfigur_svg.svg"
+              type="image/svg+xml"
+              class="find-behandling__svg"
+              aria-label="Klikbar kropsfigur – vælg en zone for at se behandlinger">
+            </object>
+          </div>
+          <div class="find-behandling__knap-wrapper">
+            <a href="behandlinger.html" class="knap knap--sekundaer">Gå til behandlinger</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Øvrige behandlinger ───────────────────────────── -->
+      <section class="sektion oevrige-behandlinger">
+        <div class="sektion__indhold">
+          <h2>Øvrige behandlinger</h2>
+          <p>Udover fysioterapi tilbyder jeg specialiserede løsninger, der optimerer din krops fundament og restitution:</p>
+          <p class="oevrige-behandlinger__underoverskrift"><strong>Formthotics indlægssåler</strong></p>
+          <p>Dine fødder er fundamentet for din kropsholdning. Jeg skræddersyr Formthotics-såler, der formes direkte efter din fod. Det afhjælper effektivt smerter i fødder, knæ og ryg ved at korrigere din biomekanik.</p>
+          <p class="oevrige-behandlinger__underoverskrift"><strong>Massage &amp; Velvære</strong></p>
+          <p>Få løsnet op for dybe spændinger og giv kroppen ro til at restituere. Jeg tilbyder både fokuseret behandling af problemområder og afspændende helkropsmassage, tilpasset dine behov.</p>
+          <div class="oevrige-behandlinger__billede-wrapper">
+            <img src="assets/behandling2.webp" alt="Behandling hos Grocott Fysioterapi" class="oevrige-behandlinger__billede">
+          </div>
+          <div class="oevrige-behandlinger__knap-wrapper">
+            <a href="behandlinger.html" class="knap knap--sekundaer">Læs mere om behandlinger</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Hvad siger andre? ──────────────────────────────── -->
+      <section class="sektion anmeldelser">
+        <div class="sektion__indhold">
+          <h2 class="anmeldelser__overskrift">Hvad siger andre?</h2>
+          <p class="anmeldelser__intro">Dine resultater er min bedste anbefaling. Her kan du læse om de oplevelser, mine klienter har haft med forløb hos Grocott Fysioterapi.</p>
+          <div class="anmeldelse-karrusel">
+            <button class="anmeldelse-karrusel__pil" aria-label="Forrige anmeldelse">&#8249;</button>
+            <div class="anmeldelse-kort">
+              <img src="assets/anmeldelse.webp" alt="Patient hos Grocott Fysioterapi" class="anmeldelse-kort__billede">
+              <div class="anmeldelse-kort__indhold">
+                <p class="anmeldelse-kort__citat">"Jeg tror aldrig, jeg har mødt en specialiseret sundhedsfaglig person, som både gav sig tid til at lytte, forstå og være nysgerring på, om der kan være flere eller andre årsager til ens smerter."</p>
+                <p class="anmeldelse-kort__navn">— June <span class="anmeldelse-kort__tilstand">(Frossen skulder og mulig hoftedysplasi)</span></p>
+              </div>
+            </div>
+            <button class="anmeldelse-karrusel__pil" aria-label="Næste anmeldelse">&#8250;</button>
+          </div>
+          <div class="anmeldelser__knap-wrapper">
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ── Footer ────────────────────────────────────────────── -->
+    <footer class="sidefod">
+      <div class="sidefod__indhold">
+        <a href="index.html" class="sidefod__logo-wrapper">
+          <img src="assets/logo.svg" alt="Grocott Fysioterapi logo" class="sidefod__logo">
+        </a>
+
+        <div class="sidefod__grid">
+          <div class="sidefod__kolonne">
+            <h3 class="sidefod__overskrift">Kontakt:</h3>
+            <address class="sidefod__adresse">
+              <p>Tlf: <a href="tel:60866770" class="sidefod__link">60 86 67 70</a></p>
+              <p>Langeskov Centret 1,<br>butik 3<br>5550 Langeskov</p>
+              <p>CVR: 40229299</p>
+            </address>
+          </div>
+
+          <div class="sidefod__kolonne">
+            <h3 class="sidefod__overskrift">Åbningstider:</h3>
+            <p>Mandag-fredag:<br>8-16</p>
+            <p>Lørdag og søndag:<br>Efter behov</p>
+          </div>
+
+          <div class="sidefod__kolonne">
+            <h3 class="sidefod__overskrift">Praktisk information:</h3>
+            <ul class="sidefod__liste">
+              <li><a href="#" class="sidefod__link">Afbudspolitik</a></li>
+              <li><a href="#" class="sidefod__link">Betingelser</a></li>
+              <li><a href="#" class="sidefod__link">Privatliv</a></li>
+              <li><a href="#" class="sidefod__link">Cookies</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sidefod__bund">
+          <div class="sidefod__bund-info">
+            <p class="sidefod__firmanavn">Grocott Fysioterapi</p>
+            <a href="https://dk.trustpilot.com/review/grocottfys.dk" class="sidefod__link" target="_blank" rel="noopener noreferrer">Se anmeldelser på Trustpilot</a>
+            <a href="https://dk.trustpilot.com/review/grocottfys.dk" class="sidefod__trustpilot" target="_blank" rel="noopener noreferrer" aria-label="Se anmeldelser på Trustpilot">
+              <div class="sidefod__stjerner" aria-hidden="true">
+                <svg class="sidefod__stjerne" viewBox="0 0 20 19"><path d="M10 0l2.36 7.27H20l-6.18 4.49 2.36 7.27L10 14.55l-6.18 4.48 2.36-7.27L0 7.27h7.64z" fill="#00B67A"/></svg>
+                <svg class="sidefod__stjerne" viewBox="0 0 20 19"><path d="M10 0l2.36 7.27H20l-6.18 4.49 2.36 7.27L10 14.55l-6.18 4.48 2.36-7.27L0 7.27h7.64z" fill="#00B67A"/></svg>
+                <svg class="sidefod__stjerne" viewBox="0 0 20 19"><path d="M10 0l2.36 7.27H20l-6.18 4.49 2.36 7.27L10 14.55l-6.18 4.48 2.36-7.27L0 7.27h7.64z" fill="#00B67A"/></svg>
+                <svg class="sidefod__stjerne" viewBox="0 0 20 19"><path d="M10 0l2.36 7.27H20l-6.18 4.49 2.36 7.27L10 14.55l-6.18 4.48 2.36-7.27L0 7.27h7.64z" fill="#00B67A"/></svg>
+                <svg class="sidefod__stjerne" viewBox="0 0 20 19"><defs><linearGradient id="tp-partial"><stop offset="60%" stop-color="#00B67A"/><stop offset="60%" stop-color="#DCDCE6"/></linearGradient></defs><path d="M10 0l2.36 7.27H20l-6.18 4.49 2.36 7.27L10 14.55l-6.18 4.48 2.36-7.27L0 7.27h7.64z" fill="url(#tp-partial)"/></svg>
+              </div>
+              <span class="sidefod__rating-tekst">4.6 (26)</span>
+            </a>
+          </div>
+          <nav class="sidefod__sociale" aria-label="Sociale medier">
+            <a href="#" class="sidefod__sociale-knap" aria-label="Følg os på Facebook" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="sidefod__sociale-knap" aria-label="Følg os på Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="sidefod__sociale-knap" aria-label="Følg os på LinkedIn" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </footer>
 
     <script src="js/burgermenu.js"></script>
   </body>

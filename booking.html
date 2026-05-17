@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book tid – Grocott Fysioterapi</title>
+    <link rel="stylesheet" href="Main.css"/>
+  </head>
+  <body>
+    <!-- Ikonsamling fra Det Faelles Designsystem (designsystem.dk) -->
+    <div style="display:none" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <symbol id="menu" viewBox="0 0 24 24">
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </symbol>
+        <symbol id="close" viewBox="0 0 24 24">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </symbol>
+      </svg>
+    </div>
+
+    <nav class="navbar">
+      <a href="index.html">
+        <img src="assets/logo.svg" alt="Grocott Fysioterapi logo" class="navbar__logo">
+      </a>
+      <button id="navbarBurger" class="navbar__burger" aria-label="Åbn menu" aria-expanded="false" aria-controls="navbarMenu">
+        <svg aria-hidden="true" focusable="false" class="navbar__burger-ikon navbar__burger-ikon--aaben" width="24" height="24" viewBox="0 0 24 24">
+          <use href="#menu"></use>
+        </svg>
+        <svg aria-hidden="true" focusable="false" class="navbar__burger-ikon navbar__burger-ikon--luk" width="24" height="24" viewBox="0 0 24 24">
+          <use href="#close"></use>
+        </svg>
+      </button>
+      <div id="navbarMenu" class="navbar__menu"></div>
+    </nav>
+
+    <nav class="broedkrumme" aria-label="Brødkrumme">
+      <div class="broedkrumme__indhold">
+        <ol class="broedkrumme__liste">
+          <li class="broedkrumme__punkt"><a href="index.html" class="broedkrumme__link">Forside</a></li>
+          <li class="broedkrumme__punkt broedkrumme__punkt--aktiv" aria-current="page">Book tid</li>
+        </ol>
+      </div>
+    </nav>
+
+    <main>
+      <section class="sektion booking">
+        <div class="sektion__indhold">
+          <h1 class="booking__titel">Book tid</h1>
+
+          <!-- ── Trin-indikator ─────────────────────────────── -->
+          <div class="booking__trin-indikator" aria-label="Bookingflow">
+            <div class="booking__trin booking__trin--aktiv" data-trin="1">
+              <div class="booking__trin-cirkel"><span>1</span></div>
+              <span class="booking__trin-tekst">Behandling</span>
+            </div>
+            <div class="booking__trin-streg" aria-hidden="true"></div>
+            <div class="booking__trin" data-trin="2">
+              <div class="booking__trin-cirkel"><span>2</span></div>
+              <span class="booking__trin-tekst">Dato &amp; tid</span>
+            </div>
+            <div class="booking__trin-streg" aria-hidden="true"></div>
+            <div class="booking__trin" data-trin="3">
+              <div class="booking__trin-cirkel"><span>3</span></div>
+              <span class="booking__trin-tekst">Oplysninger</span>
+            </div>
+          </div>
+
+          <!-- ── Trin 1: Vælg behandling ────────────────────── -->
+          <div class="booking__sektion" id="booking-trin-1">
+            <h2 class="booking__sektion-overskrift">Vælg behandlingstype</h2>
+            <div class="booking__behandlinger">
+              <label class="booking__behandling-kort">
+                <input type="radio" name="behandling" value="fysioterapi">
+                <div class="booking__behandling-indhold">
+                  <strong>Fysioterapi</strong>
+                  <p>Undersøgelse og behandling af bevægeapparatet</p>
+                </div>
+              </label>
+              <label class="booking__behandling-kort">
+                <input type="radio" name="behandling" value="formthotics">
+                <div class="booking__behandling-indhold">
+                  <strong>Formthotics indlægssåler</strong>
+                  <p>Skræddersyede indlægssåler til din fod</p>
+                </div>
+              </label>
+              <label class="booking__behandling-kort">
+                <input type="radio" name="behandling" value="massage">
+                <div class="booking__behandling-indhold">
+                  <strong>Massage &amp; Velvære</strong>
+                  <p>Afspændende og fokuseret behandlingsmassage</p>
+                </div>
+              </label>
+            </div>
+            <div class="booking__navigering">
+              <button class="knap knap--primaer" id="booking-naeste-1" disabled>Næste</button>
+            </div>
+          </div>
+
+          <!-- ── Trin 2: Vælg dato og tid ───────────────────── -->
+          <div class="booking__sektion booking__sektion--skjult" id="booking-trin-2">
+            <h2 class="booking__sektion-overskrift">Vælg dato og tid</h2>
+
+            <div class="booking__kalender">
+              <div class="booking__kalender-header">
+                <button type="button" class="booking__kalender-pil" id="kalender-forrige" aria-label="Forrige måned">&#8249;</button>
+                <span class="booking__kalender-maaned" id="kalender-maaned-label"></span>
+                <button type="button" class="booking__kalender-pil" id="kalender-naeste" aria-label="Næste måned">&#8250;</button>
+              </div>
+              <div class="booking__kalender-dage-header" aria-hidden="true">
+                <span>Man</span><span>Tir</span><span>Ons</span><span>Tor</span><span>Fre</span><span>Lør</span><span>Søn</span>
+              </div>
+              <div class="booking__kalender-grid" id="kalender-grid"></div>
+            </div>
+
+            <div class="booking__tidslots" id="tidslots-wrapper">
+              <h3 class="booking__tidslots-overskrift" id="tidslots-titel"></h3>
+              <div class="booking__tidslots-grid" id="tidslots-grid"></div>
+            </div>
+
+            <div class="booking__navigering">
+              <button type="button" class="knap knap--sekundaer" id="booking-tilbage-2">Tilbage</button>
+              <button type="button" class="knap knap--primaer" id="booking-naeste-2" disabled>Næste</button>
+            </div>
+          </div>
+
+          <!-- ── Trin 3: Dine oplysninger ───────────────────── -->
+          <div class="booking__sektion booking__sektion--skjult" id="booking-trin-3">
+            <h2 class="booking__sektion-overskrift">Dine oplysninger</h2>
+            <form class="booking__formular" id="booking-formular" novalidate>
+              <div class="booking__felt-gruppe">
+                <label class="booking__label" for="booking-fornavn">Fornavn *</label>
+                <input class="booking__input" type="text" id="booking-fornavn" name="fornavn" autocomplete="given-name" required>
+              </div>
+              <div class="booking__felt-gruppe">
+                <label class="booking__label" for="booking-efternavn">Efternavn *</label>
+                <input class="booking__input" type="text" id="booking-efternavn" name="efternavn" autocomplete="family-name" required>
+              </div>
+              <div class="booking__felt-gruppe">
+                <label class="booking__label" for="booking-telefon">Telefon *</label>
+                <input class="booking__input" type="tel" id="booking-telefon" name="telefon" autocomplete="tel" required>
+              </div>
+              <div class="booking__felt-gruppe">
+                <label class="booking__label" for="booking-email">E-mail *</label>
+                <input class="booking__input" type="email" id="booking-email" name="email" autocomplete="email" required>
+              </div>
+              <div class="booking__felt-gruppe">
+                <label class="booking__label" for="booking-noter">Bemærkninger</label>
+                <textarea class="booking__input booking__input--tekstomraade" id="booking-noter" name="noter" rows="4" placeholder="Fortæl kort om dit problem (valgfrit)"></textarea>
+              </div>
+              <div class="booking__navigering">
+                <button type="button" class="knap knap--sekundaer" id="booking-tilbage-3">Tilbage</button>
+                <button type="submit" class="knap knap--primaer">Bekræft booking</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- ── Bekræftelse ────────────────────────────────── -->
+          <div class="booking__sektion booking__sektion--skjult" id="booking-bekraeftelse">
+            <div class="booking__bekraeftelse">
+              <svg class="booking__bekraeftelse-ikon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              <h2>Booking modtaget!</h2>
+              <p id="bekraeftelse-besked"></p>
+              <p>Vi sender en bekræftelse til den oplyste e-mailadresse. Har du spørgsmål, er du velkommen til at ringe på <a href="tel:60866770" class="sidefod__link">60 86 67 70</a>.</p>
+              <a href="index.html" class="knap knap--primaer">Tilbage til forsiden</a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- ── Footer ────────────────────────────────────────────── -->
+    <footer class="sidefod">
+      <div class="sidefod__indhold">
+        <a href="index.html" class="sidefod__logo-wrapper">
+          <img src="assets/logo.svg" alt="Grocott Fysioterapi logo" class="sidefod__logo">
+        </a>
+        <div class="sidefod__grid">
+          <div class="sidefod__kolonne">
+            <h3 class="sidefod__overskrift">Kontakt:</h3>
+            <address class="sidefod__adresse">
+              <p>Tlf: <a href="tel:60866770" class="sidefod__link">60 86 67 70</a></p>
+              <p>Langeskov Centret 1,<br>butik 3<br>5550 Langeskov</p>
+              <p>CVR: 40229299</p>
+            </address>
+          </div>
+          <div class="sidefod__kolonne">
+            <h3 class="sidefod__overskrift">Åbningstider:</h3>
+            <p>Mandag-fredag:<br>8-16</p>
+            <p>Lørdag og søndag:<br>Efter behov</p>
+          </div>
+          <div class="sidefod__kolonne">
+            <h3 class="sidefod__overskrift">Praktisk information:</h3>
+            <ul class="sidefod__liste">
+              <li><a href="#" class="sidefod__link">Afbudspolitik</a></li>
+              <li><a href="#" class="sidefod__link">Betingelser</a></li>
+              <li><a href="#" class="sidefod__link">Privatliv</a></li>
+              <li><a href="#" class="sidefod__link">Cookies</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="sidefod__bund">
+          <div class="sidefod__bund-info">
+            <p class="sidefod__firmanavn">Grocott Fysioterapi</p>
+            <a href="https://dk.trustpilot.com/review/grocottfys.dk" class="sidefod__link" target="_blank" rel="noopener noreferrer">Se anmeldelser på Trustpilot</a>
+            <a href="https://dk.trustpilot.com/review/grocottfys.dk" class="sidefod__trustpilot" target="_blank" rel="noopener noreferrer" aria-label="Se anmeldelser på Trustpilot">
+              <div class="sidefod__stjerner" aria-hidden="true">
+                <svg class="sidefod__stjerne" viewBox="0 0 20 19"><path d="M10 0l2.36 7.27H20l-6.18 4.49 2.36 7.27L10 14.55l-6.18 4.48 2.36-7.27L0 7.27h7.64z" fill="#00B67A"/></svg>
+                <svg class="sidefod__stjerne" viewBox="0 0 20 19"><path d="M10 0l2.36 7.27H20l-6.18 4.49 2.36 7.27L10 14.55l-6.18 4.48 2.36-7.27L0 7.27h7.64z" fill="#00B67A"/></svg>
+                <svg class="sidefod__stjerne" viewBox="0 0 20 19"><path d="M10 0l2.36 7.27H20l-6.18 4.49 2.36 7.27L10 14.55l-6.18 4.48 2.36-7.27L0 7.27h7.64z" fill="#00B67A"/></svg>
+                <svg class="sidefod__stjerne" viewBox="0 0 20 19"><path d="M10 0l2.36 7.27H20l-6.18 4.49 2.36 7.27L10 14.55l-6.18 4.48 2.36-7.27L0 7.27h7.64z" fill="#00B67A"/></svg>
+                <svg class="sidefod__stjerne" viewBox="0 0 20 19"><defs><linearGradient id="tp-partial"><stop offset="60%" stop-color="#00B67A"/><stop offset="60%" stop-color="#DCDCE6"/></linearGradient></defs><path d="M10 0l2.36 7.27H20l-6.18 4.49 2.36 7.27L10 14.55l-6.18 4.48 2.36-7.27L0 7.27h7.64z" fill="url(#tp-partial)"/></svg>
+              </div>
+              <span class="sidefod__rating-tekst">4.6 (26)</span>
+            </a>
+          </div>
+          <nav class="sidefod__sociale" aria-label="Sociale medier">
+            <a href="#" class="sidefod__sociale-knap" aria-label="Følg os på Facebook" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="sidefod__sociale-knap" aria-label="Følg os på Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="sidefod__sociale-knap" aria-label="Følg os på LinkedIn" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/burgermenu.js"></script>
+    <script src="js/booking.js"></script>
+  </body>
+</html>

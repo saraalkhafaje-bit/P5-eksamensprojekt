@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="da">
   <head>
     <meta charset="UTF-8" />
@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="main.css"/>
   </head>
   <body>
+    <!-- Ikonsamling fra Det Faelles Designsystem (designsystem.dk) -->
+    <div style="display:none" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <symbol id="menu" viewBox="0 0 24 24">
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </symbol>
+        <symbol id="close" viewBox="0 0 24 24">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </symbol>
+      </svg>
+    </div>
 
     <nav class="navbar">
       <a href="index.html">
@@ -15,13 +26,25 @@
 
       <!-- Burger-knap -->
       <button id="navbarBurger" class="navbar__burger" aria-label="Åbn menu" aria-expanded="false" aria-controls="navbarMenu">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
-          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        <svg aria-hidden="true" focusable="false" class="navbar__burger-ikon navbar__burger-ikon--aaben" width="24" height="24" viewBox="0 0 24 24">
+          <use href="#menu"></use>
+        </svg>
+        <svg aria-hidden="true" focusable="false" class="navbar__burger-ikon navbar__burger-ikon--luk" width="24" height="24" viewBox="0 0 24 24">
+          <use href="#close"></use>
         </svg>
       </button>
 
       <!-- Menu-links – udfyldes dynamisk af burgermenu.js -->
       <div id="navbarMenu" class="navbar__menu"></div>
+    </nav>
+
+    <nav class="broedkrumme" aria-label="Brødkrumme">
+      <div class="broedkrumme__indhold">
+        <ol class="broedkrumme__liste">
+          <li class="broedkrumme__punkt"><a href="index.html" class="broedkrumme__link">Forside</a></li>
+          <li class="broedkrumme__punkt broedkrumme__punkt--aktiv" aria-current="page">Kontakt</li>
+        </ol>
+      </div>
     </nav>
 
     <!-- Forside indhold kommer her -->

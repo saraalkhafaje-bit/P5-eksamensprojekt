@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿?<!DOCTYPE html>
 <html lang="da">
   <head>
     <meta charset="UTF-8" />
@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="main.css"/>
   </head>
   <body>
+    <!-- Ikonsamling fra Det Faelles Designsystem (designsystem.dk) -->
+    <div style="display:none" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <symbol id="menu" viewBox="0 0 24 24">
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        </symbol>
+        <symbol id="close" viewBox="0 0 24 24">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </symbol>
+      </svg>
+    </div>
 
     <nav class="navbar">
       <a href="index.html">
@@ -15,8 +26,11 @@
 
       <!-- Burger-knap -->
       <button id="navbarBurger" class="navbar__burger" aria-label="Åbn menu" aria-expanded="false" aria-controls="navbarMenu">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
-          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+        <svg aria-hidden="true" focusable="false" class="navbar__burger-ikon navbar__burger-ikon--aaben" width="24" height="24" viewBox="0 0 24 24">
+          <use href="#menu"></use>
+        </svg>
+        <svg aria-hidden="true" focusable="false" class="navbar__burger-ikon navbar__burger-ikon--luk" width="24" height="24" viewBox="0 0 24 24">
+          <use href="#close"></use>
         </svg>
       </button>
 
@@ -24,7 +38,200 @@
       <div id="navbarMenu" class="navbar__menu"></div>
     </nav>
 
-    <!-- Forside indhold kommer her -->
+    <nav class="broedkrumme" aria-label="Br&#248;dkrumme">
+      <div class="broedkrumme__indhold">
+        <ol class="broedkrumme__liste">
+          <li class="broedkrumme__punkt"><a href="index.html" class="broedkrumme__link">Forside</a></li>
+          <li class="broedkrumme__punkt broedkrumme__punkt--aktiv" aria-current="page">Behandlinger</li>
+        </ol>
+      </div>
+    </nav>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="sektion behandlinger-hero">
+        <div class="sektion__indhold">
+          <h1>Behandlinger</h1>
+          <p>Vi tilbyder specialiseret fysioterapi for en lang række muskuloskeletale lidelser. Find dit område herunder – eller brug den interaktive kropsfigur på forsiden.</p>
+        </div>
+      </section>
+
+      <!-- Hoved -->
+      <section id="hoved" class="sektion behandling-sektion">
+        <div class="sektion__indhold">
+          <div class="behandling-sektion__wrapper">
+            <div class="behandling-sektion__billede">
+              <img src="assets/hovedpine.webp" alt="Behandling af hoved og hovedpine" loading="lazy">
+            </div>
+            <div class="behandling-sektion__tekst">
+              <h2>Hoved &amp; Hovedpine</h2>
+              <p>Spændingshovedpine og cervikogen hovedpine opstår oftest som følge af spændte muskler og leddysfunktion i nakken. Vi kombinerer manuel terapi, bløddelsbehandling og målrettede øvelser, så du kan slippe af med smerterne.</p>
+              <a href="booking.html" class="knap knap--primaer">Book tid</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kæbe -->
+      <section id="kaebe" class="sektion behandling-sektion behandling-sektion--lys">
+        <div class="sektion__indhold">
+          <div class="behandling-sektion__wrapper behandling-sektion__wrapper--omvendt">
+            <div class="behandling-sektion__billede">
+              <img src="assets/kaebe.webp" alt="Behandling af kæbesmerter" loading="lazy">
+            </div>
+            <div class="behandling-sektion__tekst">
+              <h2>Kæbe</h2>
+              <p>Kæbeledssmerter (TMD) kan give hovedpine, tandpresseri og klikkelyde. Vi behandler med manuel terapi af kæbeleddet, spændingsreduktion i tyggemuskulaturen og vejledning i dagligdagsadfærd.</p>
+              <a href="booking.html" class="knap knap--primaer">Book tid</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Nakke og skuldre -->
+      <section id="nakkeogskuldre" class="sektion behandling-sektion">
+        <div class="sektion__indhold">
+          <div class="behandling-sektion__wrapper">
+            <div class="behandling-sektion__billede">
+              <img src="assets/nakke.webp" alt="Behandling af nakke og skuldre" loading="lazy">
+            </div>
+            <div class="behandling-sektion__tekst">
+              <h2>Nakke &amp; Skuldre</h2>
+              <p>Nakkesmerter, whiplash og skulderimpingement er blandt de mest almindelige henvendelser. Vi udreder årsagen og tilbyder en kombination af manuel behandling, øvelsesprogrammer og ergonomisk vejledning.</p>
+              <a href="booking.html" class="knap knap--primaer">Book tid</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Ryg -->
+      <section id="ryg" class="sektion behandling-sektion behandling-sektion--lys">
+        <div class="sektion__indhold">
+          <div class="behandling-sektion__wrapper behandling-sektion__wrapper--omvendt">
+            <div class="behandling-sektion__billede">
+              <img src="assets/ryg.webp" alt="Behandling af rygsmerter" loading="lazy">
+            </div>
+            <div class="behandling-sektion__tekst">
+              <h2>Ryg</h2>
+              <p>Lændesmerter, diskusprolaps og muskelspændinger i ryggen behandles effektivt med manuel terapi og individuelle træningsprogrammer. Vi hjælper dig tilbage til et aktivt liv – uanset om smerterne er kroniske eller akutte.</p>
+              <a href="booking.html" class="knap knap--primaer">Book tid</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hofte -->
+      <section id="hofte" class="sektion behandling-sektion">
+        <div class="sektion__indhold">
+          <div class="behandling-sektion__wrapper">
+            <div class="behandling-sektion__billede">
+              <img src="assets/behandling2.webp" alt="Behandling af hofte" loading="lazy">
+            </div>
+            <div class="behandling-sektion__tekst">
+              <h2>Hofte</h2>
+              <p>Hofteartrose, knæk i hoften og idrætsskader i hofteregionen kræver præcis diagnose og individuelt tilpasset behandling. Vi kombinerer manuel terapi med belastnings- og styrketræning for at genoprette funktion.</p>
+              <a href="booking.html" class="knap knap--primaer">Book tid</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Knæ -->
+      <section id="knae" class="sektion behandling-sektion behandling-sektion--lys">
+        <div class="sektion__indhold">
+          <div class="behandling-sektion__wrapper behandling-sektion__wrapper--omvendt">
+            <div class="behandling-sektion__billede">
+              <img src="assets/knae.webp" alt="Behandling af knæsmerter" loading="lazy">
+            </div>
+            <div class="behandling-sektion__tekst">
+              <h2>Knæ</h2>
+              <p>Fra løberknæ og jumperknæ til meniskskader og slidgigt – vi behandler alle former for knæproblemer. Vores tilgang er evidensbaseret og fokuserer på at genetablere styrke, stabilitet og bevægelighed.</p>
+              <a href="booking.html" class="knap knap--primaer">Book tid</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fødder -->
+      <section id="fod" class="sektion behandling-sektion">
+        <div class="sektion__indhold">
+          <div class="behandling-sektion__wrapper">
+            <div class="behandling-sektion__billede">
+              <img src="assets/foedder.webp" alt="Behandling af fodproblemer" loading="lazy">
+            </div>
+            <div class="behandling-sektion__tekst">
+              <h2>Fødder</h2>
+              <p>Hælspore, plantar fasciit og ankelinstabilitet kan have stor indvirkning på hverdagen. Vi tilbyder behandling, vejledning i fodtøj og individuelle formindlæg (Formthotics) til at aflaste og styrke foden.</p>
+              <a href="booking.html" class="knap knap--primaer">Book tid</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="sidefod">
+      <div class="sidefod__indhold">
+        <a href="index.html" class="sidefod__logo-wrapper">
+          <img src="assets/logo.svg" alt="Grocott Fysioterapi logo" class="sidefod__logo">
+        </a>
+        <div class="sidefod__grid">
+          <div class="sidefod__kolonne">
+            <h3 class="sidefod__overskrift">Kontakt:</h3>
+            <address class="sidefod__adresse">
+              <p>Tlf: <a href="tel:60866770" class="sidefod__link">60 86 67 70</a></p>
+              <p>Langeskov Centret 1,<br>butik 3<br>5550 Langeskov</p>
+              <p>CVR: 40229299</p>
+            </address>
+          </div>
+
+          <div class="sidefod__kolonne">
+            <h3 class="sidefod__overskrift">Åbningstider:</h3>
+            <p>Mandag-fredag:<br>8-16</p>
+            <p>Lørdag og søndag:<br>Efter behov</p>
+          </div>
+
+          <div class="sidefod__kolonne">
+            <h3 class="sidefod__overskrift">Praktisk information:</h3>
+            <ul class="sidefod__liste">
+              <li><a href="#" class="sidefod__link">Afbudspolitik</a></li>
+              <li><a href="#" class="sidefod__link">Betingelser</a></li>
+              <li><a href="#" class="sidefod__link">Privatliv</a></li>
+              <li><a href="#" class="sidefod__link">Cookies</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="sidefod__bund">
+          <div class="sidefod__bund-info">
+            <p class="sidefod__firmanavn">Grocott Fysioterapi</p>
+            <a href="https://dk.trustpilot.com/review/grocottfys.dk" class="sidefod__link" target="_blank" rel="noopener noreferrer">Se anmeldelser p&#229; Trustpilot</a>
+            <a href="https://dk.trustpilot.com/review/grocottfys.dk" class="sidefod__trustpilot" target="_blank" rel="noopener noreferrer" aria-label="Se anmeldelser p&#229; Trustpilot">
+              <div class="sidefod__stjerner" aria-hidden="true">
+                <svg class="sidefod__stjerne" viewBox="0 0 20 19"><path d="M10 0l2.36 7.27H20l-6.18 4.49 2.36 7.27L10 14.55l-6.18 4.48 2.36-7.27L0 7.27h7.64z" fill="#00B67A"/></svg>
+                <svg class="sidefod__stjerne" viewBox="0 0 20 19"><path d="M10 0l2.36 7.27H20l-6.18 4.49 2.36 7.27L10 14.55l-6.18 4.48 2.36-7.27L0 7.27h7.64z" fill="#00B67A"/></svg>
+                <svg class="sidefod__stjerne" viewBox="0 0 20 19"><path d="M10 0l2.36 7.27H20l-6.18 4.49 2.36 7.27L10 14.55l-6.18 4.48 2.36-7.27L0 7.27h7.64z" fill="#00B67A"/></svg>
+                <svg class="sidefod__stjerne" viewBox="0 0 20 19"><path d="M10 0l2.36 7.27H20l-6.18 4.49 2.36 7.27L10 14.55l-6.18 4.48 2.36-7.27L0 7.27h7.64z" fill="#00B67A"/></svg>
+                <svg class="sidefod__stjerne" viewBox="0 0 20 19"><defs><linearGradient id="tp-partial"><stop offset="60%" stop-color="#00B67A"/><stop offset="60%" stop-color="#DCDCE6"/></linearGradient></defs><path d="M10 0l2.36 7.27H20l-6.18 4.49 2.36 7.27L10 14.55l-6.18 4.48 2.36-7.27L0 7.27h7.64z" fill="url(#tp-partial)"/></svg>
+              </div>
+              <span class="sidefod__rating-tekst">4.6 (26)</span>
+            </a>
+          </div>
+          <nav class="sidefod__sociale" aria-label="Sociale medier">
+            <a href="#" class="sidefod__sociale-knap" aria-label="Følg os på Facebook" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" class="sidefod__sociale-knap" aria-label="Følg os på Instagram" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="sidefod__sociale-knap" aria-label="Følg os på LinkedIn" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </footer>
 
     <script src="js/burgermenu.js"></script>
   </body>

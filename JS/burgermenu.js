@@ -7,9 +7,8 @@ const menuItems = [
     { menuName: 'Priser', link: 'priser.html' },
     { menuName: 'Til forældre', link: 'tilforaeldre.html' },
     { menuName: 'Til erhverv', link: 'tilerhverv.html' },
-    { menuName: 'Hvad siger andre?', link: 'hvadsigerandre.html' },
     { menuName: 'Kontakt', link: 'kontakt.html' },
-    { menuName: 'Book tid', link: 'bookingtrin1.html' }
+    { menuName: 'Book tid', link: 'booking.html' }
 ];
 
 const navbarMenu = document.getElementById('navbarMenu');
@@ -32,8 +31,11 @@ for (let i = 0; i < menuItems.length; i++) {
 const navbarLinks = document.querySelectorAll('.navbar__menu-link');
 
 navbarBurger.addEventListener('click', function () {
+    const isExpanded = navbarBurger.getAttribute('aria-expanded') === 'true';
     navbarMenu.classList.toggle('active');
     navbarBurger.classList.toggle('active');
+    navbarBurger.setAttribute('aria-expanded', String(!isExpanded));
+    navbarBurger.setAttribute('aria-label', isExpanded ? 'Åbn menu' : 'Luk menu');
 });
 
 // Luk menu når man klikker på et link
@@ -41,6 +43,8 @@ for (let i = 0; i < navbarLinks.length; i++) {
     navbarLinks[i].addEventListener('click', function () {
         navbarMenu.classList.remove('active');
         navbarBurger.classList.remove('active');
+        navbarBurger.setAttribute('aria-expanded', 'false');
+        navbarBurger.setAttribute('aria-label', 'Åbn menu');
     });
 }
 
@@ -49,5 +53,7 @@ document.addEventListener('click', function (event) {
     if (!navbarMenu.contains(event.target) && !navbarBurger.contains(event.target)) {
         navbarMenu.classList.remove('active');
         navbarBurger.classList.remove('active');
+        navbarBurger.setAttribute('aria-expanded', 'false');
+        navbarBurger.setAttribute('aria-label', 'Åbn menu');
     }
 });
